@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
-  EditBtn, Process, inifiles {$IFDEF WIN64}, Windows {$ENDIF};
+  EditBtn, Process, inifiles, LCLIntF {$IFDEF WIN64}, Windows {$ENDIF};
 
 type
 
@@ -104,7 +104,7 @@ begin
   parametros := string('-f "bestvideo[height<=720]+bestaudio/best[height<=720]" --merge-output-format mp4 --ignore-errors -o "'+Edit_Pasta_Baixar.Text+'/'+pasta+'/%(title)s.mp4'+'" '+Edit_Endereco.Text);
   {$ENDIF}
   // Mostra os parametros para execução do yt-dlp
-  showmessage(parametros);
+  //showmessage(parametros);
 
   // Executando o YT-DLP
 
@@ -272,7 +272,7 @@ begin
     ValorLido := IniFile.ReadString('iBaixar', 'Pasta_Baixar','');
     Pasta_Baixar := IniFile.ReadString('iBaixar', 'Pasta_Baixar','');
     Edit_Pasta_Baixar.Text := Pasta_Baixar;
-    ShowMessage('Valor lido: ' + ValorLido);
+//    ShowMessage('Valor lido: ' + ValorLido );
   finally
     IniFile.Free;
   end;
@@ -282,7 +282,7 @@ begin
   //* Pasta onde ira ser colocado os donwloads
 
   // Versão do aplicativo
-  versao := 'L2.20260322.1';
+  versao := 'L2.20260402.1';
   label1.Caption := 'Local de gravação: '+pasta_baixar;
   label2.Caption := 'iBaixar '+versao;
 end;
@@ -323,6 +323,7 @@ begin
   ShellExecute(0, 'open', PChar(Pasta), nil, nil, SW_SHOWNORMAL);
   {$ENDIF}
   {$IFDEF LINUX}
+  OpenDocument(PChar(Pasta));
   {$ENDIF}
 end;
 

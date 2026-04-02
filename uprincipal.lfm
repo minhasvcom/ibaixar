@@ -1329,8 +1329,8 @@ object Form_Principal: TForm_Principal
     TabOrder = 0
     object Baixar: TTabSheet
       Caption = 'Baixar'
-      ClientHeight = 462
-      ClientWidth = 689
+      ClientHeight = 466
+      ClientWidth = 685
       object group_endereco: TGroupBox
         Left = 8
         Height = 89
@@ -1342,7 +1342,7 @@ object Form_Principal: TForm_Principal
         TabOrder = 0
         object Edit_Endereco: TEdit
           Left = 8
-          Height = 26
+          Height = 28
           Top = 16
           Width = 656
           TabOrder = 0
@@ -1359,7 +1359,7 @@ object Form_Principal: TForm_Principal
         TabOrder = 1
         object Edit_Pasta: TEdit
           Left = 8
-          Height = 26
+          Height = 28
           Top = 24
           Width = 656
           TabOrder = 0
@@ -1390,25 +1390,25 @@ object Form_Principal: TForm_Principal
       end
       object Check_MP3: TCheckBox
         Left = 24
-        Height = 22
+        Height = 23
         Top = 224
-        Width = 114
+        Width = 116
         Caption = 'Baixar em mp3'
         TabOrder = 3
       end
       object Check_Sem_Audio: TCheckBox
         Left = 26
-        Height = 22
+        Height = 23
         Top = 252
-        Width = 126
+        Width = 128
         Caption = 'Baixar sem audio'
         TabOrder = 4
       end
     end
     object Configuracoes: TTabSheet
       Caption = 'Configuracões'
-      ClientHeight = 462
-      ClientWidth = 689
+      ClientHeight = 466
+      ClientWidth = 685
       object group_pasta_baixar: TGroupBox
         Left = 8
         Height = 105
@@ -1420,7 +1420,7 @@ object Form_Principal: TForm_Principal
         TabOrder = 0
         object Edit_Pasta_Baixar: TDirectoryEdit
           Left = 16
-          Height = 26
+          Height = 28
           Top = 26
           Width = 656
           ShowHidden = False

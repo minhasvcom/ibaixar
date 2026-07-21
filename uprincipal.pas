@@ -102,9 +102,9 @@ begin
   if Check_Sem_Audio.Checked then parametros := string('-f "bestvideo[height<=720]" --merge-output-format mp4 --ignore-errors -o  '+'"'+Edit_Pasta_Baixar.Text+'/'+pasta+'/%(title)s.mp4'+'" '+Edit_Endereco.Text)
   else
   parametros := string('-f "bestvideo[height<=720]+bestaudio/best[height<=720]" --merge-output-format mp4 --ignore-errors -o "'+Edit_Pasta_Baixar.Text+'/'+pasta+'/%(title)s.mp4'+'" '+Edit_Endereco.Text);
-  {$ENDIF}
+  {$ENDIF LINUX}
   // Mostra os parametros para execução do yt-dlp
-  //showmessage(parametros);
+  showmessage(parametros);
 
   // Executando o YT-DLP
 
@@ -166,7 +166,7 @@ begin
     end;
   {$ENDIF}
   {$IFDEF LINUX}
-    AProcess.CommandLine := 'yt-dlp '+ parametros;
+    AProcess.CommandLine := 'yt-dlp '+ parametros +' > log.txt';
     AProcess.execute;
 
     //Espera um tempo até começar a baixar o yt-dlp

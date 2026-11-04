@@ -21,8 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="189"/>
-        <CursorPos X="59" Y="169"/>
+        <TopLine Value="236"/>
+        <CursorPos X="74" Y="245"/>
         <UsageCount Value="54"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -35,26 +35,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="28">
-      <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="94" Column="55" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="146" TopLine="131"/>
-      </Position>
-      <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="147" TopLine="132"/>
-      </Position>
-      <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="162" Column="21" TopLine="133"/>
-      </Position>
-      <Position>
-        <Filename Value="uprincipal.pas"/>
-        <Caret Line="9" Column="35"/>
-      </Position>
       <Position>
         <Filename Value="uprincipal.pas"/>
         <Caret Line="12" Column="36"/>
@@ -150,6 +130,26 @@
       <Position>
         <Filename Value="uprincipal.pas"/>
         <Caret Line="326" Column="37" TopLine="308"/>
+      </Position>
+      <Position>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="169" Column="59" TopLine="124"/>
+      </Position>
+      <Position>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="107" Column="4"/>
+      </Position>
+      <Position>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="285" Column="25" TopLine="264"/>
+      </Position>
+      <Position>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="234" Column="5" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="uprincipal.pas"/>
+        <Caret Line="230" TopLine="215"/>
       </Position>
     </JumpHistory>
     <RunParams>

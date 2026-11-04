@@ -104,7 +104,7 @@ begin
   parametros := string('-f "bestvideo[height<=720]+bestaudio/best[height<=720]" --merge-output-format mp4 --ignore-errors -o "'+Edit_Pasta_Baixar.Text+'/'+pasta+'/%(title)s.mp4'+'" '+Edit_Endereco.Text);
   {$ENDIF LINUX}
   // Mostra os parametros para execução do yt-dlp
-  showmessage(parametros);
+ // showmessage(parametros);
 
   // Executando o YT-DLP
 
@@ -215,18 +215,22 @@ end;
 procedure TForm_Principal.btn_salvarClick(Sender: TObject);
 var
   IniFile: TIniFile;
+  CaminhoIni: String;
 begin
- IniFile := TIniFile.Create('IBaixar.ini');
+  // Define o caminho completo na mesma pasta do executável
+  CaminhoIni := ExtractFilePath(ParamStr(0)) + 'iBaixar.ini';
+
+  // No Linux, Garanta que o nome do arquivo use as mesmas maiúsculas/minúsculas sempre
+  IniFile := TIniFile.Create(CaminhoIni);
   try
     IniFile.WriteString('iBaixar', 'Pasta_Baixar', Edit_Pasta_Baixar.Text);
   finally
     IniFile.Free;
   end;
 
-  label1.Caption := 'Local de gravação: '+Edit_Pasta_Baixar.Text;
+  label1.Caption := 'Local de gravação: ' + Edit_Pasta_Baixar.Text;
   pasta_baixar := Edit_Pasta_Baixar.Text;
-
-  pg_control.TabIndex:=0;
+  pg_control.TabIndex := 0;
 end;
 
 procedure TForm_Principal.FormCreate(Sender: TObject);
@@ -264,10 +268,14 @@ end;
 procedure TForm_Principal.FormShow(Sender: TObject);
 var
   IniFile: TIniFile;
-  ValorLido: string;
+  ValorLido, CaminhoIni: string;
 begin
+
+  // Define o caminho completo na mesma pasta do executável
+  CaminhoIni := ExtractFilePath(ParamStr(0)) + 'iBaixar.ini';
+
   // Ler ini
-  IniFile := TIniFile.Create('iBaixar.ini');
+  IniFile := TIniFile.Create(CaminhoIni);
   try
     ValorLido := IniFile.ReadString('iBaixar', 'Pasta_Baixar','');
     Pasta_Baixar := IniFile.ReadString('iBaixar', 'Pasta_Baixar','');
@@ -282,7 +290,7 @@ begin
   //* Pasta onde ira ser colocado os donwloads
 
   // Versão do aplicativo
-  versao := 'L2.20260402.1';
+  versao := 'L2.20260927.1';
   label1.Caption := 'Local de gravação: '+pasta_baixar;
   label2.Caption := 'iBaixar '+versao;
 end;
